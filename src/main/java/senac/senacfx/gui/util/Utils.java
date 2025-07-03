@@ -97,4 +97,5 @@ public class Utils {
         });
     }
 
-}
+    public static Long tryParseToLong(String text) {
+    }}

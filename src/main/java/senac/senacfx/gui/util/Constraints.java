@@ -24,4 +24,7 @@ public class Constraints {
             }
         });
     }
+
+    public static void setTextFieldLong(TextField txtCodigo) {
+    }
 }

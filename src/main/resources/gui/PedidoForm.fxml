@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.PedidoFormController">
+    <children>
+        <Label text="Código" />
+        <TextField fx:id="txtCodigo" />
+
+        <Label text="Cliente" />
+        <ComboBox fx:id="comboBoxCliente" />
+        <Label fx:id="labelErrorCliente" textFill="red" />
+
+        <Label text="Entregador" />
+        <ComboBox fx:id="comboBoxEntregador" />
+        <Label fx:id="labelErrorEntregador" textFill="red" />
+
+        <Label text="Data do Pedido" />
+        <DatePicker fx:id="dpDataPedido" />
+        <Label fx:id="labelErrorData" textFill="red" />
+
+        <HBox spacing="10">
+            <children>
+                <Button fx:id="btSave" text="Salvar" onAction="#onBtSaveAction" />
+                <Button fx:id="btCancel" text="Cancelar" onAction="#onBtCancelAction" />
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15" />
+    </padding>
+</VBox>
