@@ -16,22 +16,22 @@ import java.util.Locale;
 
 public class Utils {
 
-    public static Stage currentStage(ActionEvent event){
-        return (Stage) ((Node)event.getSource()).getScene().getWindow();
+    public static Stage currentStage(ActionEvent event) {
+        return (Stage) ((Node) event.getSource()).getScene().getWindow();
     }
 
-    public static Integer tryParseToInt(String str){
+    public static Integer tryParseToInt(String str) {
         try {
             return Integer.parseInt(str);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return null;
         }
     }
 
-    public static Double tryParseToDouble(String str){
+    public static Double tryParseToDouble(String str) {
         try {
             return Double.parseDouble(str);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return null;
         }
     }
@@ -40,6 +40,7 @@ public class Utils {
         tableColumn.setCellFactory(column -> {
             TableCell<T, Date> cell = new TableCell<T, Date>() {
                 private SimpleDateFormat sdf = new SimpleDateFormat(format);
+
                 @Override
                 protected void updateItem(Date item, boolean empty) {
                     super.updateItem(item, empty);
@@ -64,7 +65,7 @@ public class Utils {
                         setText(null);
                     } else {
                         Locale.setDefault(Locale.US);
-                        setText(String.format("%."+decimalPlaces+"f", item));
+                        setText(String.format("%." + decimalPlaces + "f", item));
                     }
                 }
             };
@@ -75,9 +76,11 @@ public class Utils {
     public static void formatDatePicker(DatePicker datePicker, String format) {
         datePicker.setConverter(new StringConverter<LocalDate>() {
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(format);
+
             {
                 datePicker.setPromptText(format.toLowerCase());
             }
+
             @Override
             public String toString(LocalDate date) {
                 if (date != null) {
@@ -86,6 +89,7 @@ public class Utils {
                     return "";
                 }
             }
+
             @Override
             public LocalDate fromString(String string) {
                 if (string != null && !string.isEmpty()) {
@@ -97,5 +101,11 @@ public class Utils {
         });
     }
 
-    public static Long tryParseToLong(String text) {
-    }}
+    public static Long tryParseToLong(String str) {
+        try {
+            return Long.parseLong(str);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+}
