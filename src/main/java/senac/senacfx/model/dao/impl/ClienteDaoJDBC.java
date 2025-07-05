@@ -18,7 +18,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public void insert(Cliente obj) {
-        String sql = "INSERT INTO clientes (nome, endereco, telefone, email) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO cliente (nome, endereco, telefone, email) VALUES (?, ?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getEndereco());
@@ -42,7 +42,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public void update(Cliente obj) {
-        String sql = "UPDATE clientes SET nome = ?, endereco = ?, telefone = ?, email = ? WHERE codigo = ?";
+        String sql = "UPDATE cliente SET nome = ?, endereco = ?, telefone = ?, email = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getEndereco());
@@ -67,7 +67,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 
     @Override
     public List<Cliente> findAll() {
-        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM clientes ORDER BY nome")) {
+        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM cliente ORDER BY nome")) {
             ResultSet rs = st.executeQuery();
             List<Cliente> list = new ArrayList<>();
             while (rs.next()) {

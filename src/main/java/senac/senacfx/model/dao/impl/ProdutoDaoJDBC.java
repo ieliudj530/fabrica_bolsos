@@ -19,7 +19,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
 
     @Override
     public void insert(Produto obj) {
-        String sql = "INSERT INTO produtos (nome, descricao, preco, stock) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO produto (nome, descricao, preco, stock) VALUES (?, ?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getDescricao());
@@ -42,7 +42,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
 
     @Override
     public void update(Produto obj) {
-        String sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, stock = ? WHERE codigo = ?";
+        String sql = "UPDATE produto SET nome = ?, descricao = ?, preco = ?, stock = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getDescricao());
@@ -67,7 +67,7 @@ public class ProdutoDaoJDBC implements ProdutoDao {
 
     @Override
     public List<Produto> findAll() {
-        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM produtos ORDER BY nome")) {
+        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM produto ORDER BY nome")) {
             ResultSet rs = st.executeQuery();
             List<Produto> list = new ArrayList<>();
             while (rs.next()) {
