@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.ProdutoFormController">
+<VBox spacing="10.0" padding="15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.ProdutoFormController">
     <children>
         <Label text="Código" />
         <TextField fx:id="txtCodigo" />
@@ -29,7 +29,4 @@
             </children>
         </HBox>
     </children>
-    <padding>
-        <Insets top="15" right="15" bottom="15" left="15" />
-    </padding>
 </VBox>
