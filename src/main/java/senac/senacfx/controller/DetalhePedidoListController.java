@@ -18,6 +18,7 @@ import senac.senacfx.db.DbException;
 import senac.senacfx.gui.listeners.DataChangeListener;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Utils;
+import senac.senacfx.model.entities.Cliente;
 import senac.senacfx.model.entities.DetalhePedido;
 import senac.senacfx.model.services.DetalhePedidoService;
 import senac.senacfx.model.services.PedidoService;
@@ -31,11 +32,11 @@ import java.util.ResourceBundle;
 
 public class DetalhePedidoListController implements Initializable, DataChangeListener {
 
-    public TableView tableViewDetalhePedido;
+
     private DetalhePedidoService service;
 
     @FXML
-    private TableView<DetalhePedido> tableViewDetalhe;
+    private TableView<DetalhePedido> tableViewDetalhePedido;
 
     @FXML
     private TableColumn<DetalhePedido, Long> tableColumnCodigo;
@@ -63,10 +64,6 @@ public class DetalhePedidoListController implements Initializable, DataChangeLis
 
     private ObservableList<DetalhePedido> obsList;
 
-    public DetalhePedidoListController(TableView<DetalhePedido> tableViewDetalhe) {
-        this.tableViewDetalhe = tableViewDetalhe;
-    }
-
     @FXML
     public void onBtNewAction(ActionEvent event) {
         Stage parentStage = Utils.currentStage(event);
@@ -91,7 +88,7 @@ public class DetalhePedidoListController implements Initializable, DataChangeLis
         tableColumnPrecoUnitario.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
 
         Stage stage = (Stage) Main.getMainScene().getWindow();
-        tableViewDetalhe.prefHeightProperty().bind(stage.heightProperty());
+        tableViewDetalhePedido.prefHeightProperty().bind(stage.heightProperty());
     }
 
     public void updateTableView() {
@@ -100,7 +97,7 @@ public class DetalhePedidoListController implements Initializable, DataChangeLis
         }
         List<DetalhePedido> list = service.findAll();
         obsList = FXCollections.observableArrayList(list);
-        tableViewDetalhe.setItems(obsList);
+        tableViewDetalhePedido.setItems(obsList);
         initEditButtons();
         initRemoveButtons();
     }
