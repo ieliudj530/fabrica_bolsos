@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.MainViewController">
+    <content>
+        <VBox prefHeight="405.0" prefWidth="566.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Registrar">
+                            <items>
+                                <MenuItem fx:id="menuItemCliente" mnemonicParsing="false" onAction="#onMenuItemClienteAction" text="Cliente" />
+                                <MenuItem fx:id="menuItemProduto" mnemonicParsing="false" onAction="#onMenuItemProdutoAction" text="Produto" />
+                                <MenuItem fx:id="menuItemEntregador" mnemonicParsing="false" onAction="#onMenuItemEntregadorAction" text="Entregador" />
+                                <MenuItem fx:id="menuItemPedido" mnemonicParsing="false" onAction="#onMenuItemPedidoAction" text="Pedido" />
+                                <MenuItem fx:id="menuItemDetalhePedido" mnemonicParsing="false" onAction="#onMenuItemDetalhePedidoAction" text="Detalhes do Pedido" />
+
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Informações">
+                            <items>
+                                <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="Sobre" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <TextField alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="566.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../esdeath.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="160.0" top="30.0" />
+               </VBox.margin>
+            </ImageView>
+
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
