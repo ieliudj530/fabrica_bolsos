@@ -3,7 +3,6 @@ package senac.senacfx.model.services;
 import senac.senacfx.model.dao.ClienteDao;
 import senac.senacfx.model.dao.DaoFactory;
 import senac.senacfx.model.entities.Cliente;
-import senac.senacfx.model.entities.Department;
 
 import java.util.List;
 

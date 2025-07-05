@@ -8,13 +8,6 @@ import java.util.List;
 
 public class DaoFactory {
 
-    public static SellerDao createSellerDao() {
-        return new SellerDaoJDBC(DB.getConnection());
-    }
-
-    public static DepartmentDao createDepartmentDao() {
-        return new DepartmentDaoJDBC(DB.getConnection());
-    }
 
     public static ClienteDao createClienteDao() {
         return new ClienteDaoJDBC(DB.getConnection());

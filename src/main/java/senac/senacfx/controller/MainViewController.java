@@ -12,8 +12,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import senac.senacfx.application.Main;
 import senac.senacfx.gui.util.Alerts;
-import senac.senacfx.model.services.DepartmentService;
-import senac.senacfx.model.services.SellerService;
+import senac.senacfx.model.entities.Cliente;
+import senac.senacfx.model.entities.DetalhePedido;
+import senac.senacfx.model.services.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,27 +24,58 @@ import java.util.function.Consumer;
 public class MainViewController implements Initializable {
 
     @FXML
-    private MenuItem menuItemSeller;
+    private MenuItem menuItemCliente;
     @FXML
-    private MenuItem menuItemDepartment;
+    private MenuItem menuItemProduto;
+    @FXML
+    private MenuItem menuItemEntregador;
+    @FXML
+    private MenuItem menuItemPedido;
+    @FXML
+    private MenuItem menuItemDetalhePedido;
     @FXML
     private MenuItem menuItemAbout;
-
     @FXML
-    public void onMenuItemSellerAction(){
-        loadView("/gui/SellerList.fxml", (SellerListController controller) -> {
-            controller.setSellerService(new SellerService());
+    public void onMenuItemClienteAction(){
+        loadView("/gui/ClienteList.fxml", (ClienteListController controller) -> {
+            controller.setClienteService(new ClienteService());
             controller.updateTableView();
         });
     }
 
     @FXML
-    public void onMenuItemDepartmentAction(){
-        loadView("/gui/DepartmentList.fxml", (DepartmentListController controller) -> {
-            controller.setDepartmentService(new DepartmentService());
+    public void onMenuItemProdutoAction(){
+        loadView("/gui/ProdutoList.fxml", (ProdutoListController controller) -> {
+            controller.setProdutoService(new ProdutoService());
             controller.updateTableView();
         });
     }
+
+    @FXML
+    public void onMenuItemEntregadorAction(){
+        loadView("/gui/EntregadorList.fxml", (EntregadorListController controller) -> {
+            controller.setEntregadorService(new EntregadorService());
+            controller.updateTableView();
+        });
+    }
+
+
+    @FXML
+    public void onMenuItemPedidoAction(){
+        loadView("/gui/PedidoList.fxml", (PedidoListController controller) -> {
+            controller.setPedidoService(new PedidoService());
+            controller.updateTableView();
+        });
+    }
+
+    @FXML
+    public void onMenuItemDetalhePedidoAction(){
+        loadView("/gui/DetalhePedidoList.fxml", (DetalhePedidoListController controller) -> {
+            controller.setDetalhePedidoService(new DetalhePedidoService());
+            controller.updateTableView();
+        });
+    }
+
 
     @FXML
     public void onMenuItemAboutAction(){
