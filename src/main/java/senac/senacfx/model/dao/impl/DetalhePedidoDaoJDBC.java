@@ -18,7 +18,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
 
     @Override
     public void insert(DetalhePedido obj) {
-        String sql = "INSERT INTO detalhepedido (codigo_pedido, codigo_produto, quantidade, preco_unitario) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO detalhepedido (codigo_pedido, codigo_produto, quantidade, precio_unitario) VALUES (?, ?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setLong(1, obj.getCodigoPedido());
             st.setLong(2, obj.getCodigoProduto());
@@ -41,7 +41,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
 
     @Override
     public void update(DetalhePedido obj) {
-        String sql = "UPDATE detalhepedido SET codigo_pedido = ?, codigo_produto = ?, quantidade = ?, preco_unitario = ? WHERE codigo = ?";
+        String sql = "UPDATE detalhepedido SET codigo_pedido = ?, codigo_produto = ?, quantidade = ?, precio_unitario = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setLong(1, obj.getCodigoPedido());
             st.setLong(2, obj.getCodigoProduto());
@@ -87,7 +87,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
         obj.setCodigoPedido(rs.getLong("codigo_pedido"));
         obj.setCodigoProduto(rs.getLong("codigo_produto"));
         obj.setQuantidade(rs.getInt("quantidade"));
-        obj.setPrecoUnitario(rs.getDouble("preco_unitario"));
+        obj.setPrecoUnitario(rs.getDouble("precio_unitario"));
         return obj;
     }
 }
