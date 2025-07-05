@@ -31,6 +31,7 @@ import java.util.ResourceBundle;
 
 public class DetalhePedidoListController implements Initializable, DataChangeListener {
 
+    public TableView tableViewDetalhePedido;
     private DetalhePedidoService service;
 
     @FXML
@@ -61,6 +62,10 @@ public class DetalhePedidoListController implements Initializable, DataChangeLis
     private Button btNew;
 
     private ObservableList<DetalhePedido> obsList;
+
+    public DetalhePedidoListController(TableView<DetalhePedido> tableViewDetalhe) {
+        this.tableViewDetalhe = tableViewDetalhe;
+    }
 
     @FXML
     public void onBtNewAction(ActionEvent event) {
