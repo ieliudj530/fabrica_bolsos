@@ -2,11 +2,9 @@ package senac.senacfx.model.dao.impl;
 
 import senac.senacfx.db.DbException;
 import senac.senacfx.model.dao.PedidoDao;
-import senac.senacfx.model.entities.Cliente;
 import senac.senacfx.model.entities.Pedido;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +18,7 @@ public class PedidoDaoJDBC implements PedidoDao {
 
     @Override
     public void insert(Pedido obj) {
-        String sql = "INSERT INTO pedidos (codigo_cliente, codigo_entregador, data_pedido) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO pedido (codigo_cliente, codigo_entregador, data_pedido) VALUES (?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setLong(1, obj.getCodigoCliente());
             st.setLong(2, obj.getCodigoEntregador());
@@ -42,7 +40,7 @@ public class PedidoDaoJDBC implements PedidoDao {
 
     @Override
     public void update(Pedido obj) {
-        String sql = "UPDATE pedidos SET codigo_cliente = ?, codigo_entregador = ?, data_pedido = ? WHERE codigo = ?";
+        String sql = "UPDATE pedido SET codigo_cliente = ?, codigo_entregador = ?, data_pedido = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setLong(1, obj.getCodigoCliente());
             st.setLong(2, obj.getCodigoEntregador());
@@ -66,7 +64,7 @@ public class PedidoDaoJDBC implements PedidoDao {
 
     @Override
     public List<Pedido> findAll() {
-        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM pedidos ORDER BY data_pedido DESC")) {
+        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM pedido ORDER BY data_pedido DESC")) {
             ResultSet rs = st.executeQuery();
             List<Pedido> list = new ArrayList<>();
             while (rs.next()) {

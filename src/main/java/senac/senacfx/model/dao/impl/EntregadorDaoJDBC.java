@@ -2,7 +2,6 @@ package senac.senacfx.model.dao.impl;
 
 import senac.senacfx.db.DbException;
 import senac.senacfx.model.dao.EntregadorDao;
-import senac.senacfx.model.entities.Cliente;
 import senac.senacfx.model.entities.Entregador;
 
 import java.sql.*;
@@ -19,7 +18,7 @@ public class EntregadorDaoJDBC implements EntregadorDao {
 
     @Override
     public void insert(Entregador obj) {
-        String sql = "INSERT INTO entregadores (nome, telefone) VALUES (?, ?)";
+        String sql = "INSERT INTO entregador (nome, telefone) VALUES (?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getTelefone());
@@ -40,7 +39,7 @@ public class EntregadorDaoJDBC implements EntregadorDao {
 
     @Override
     public void update(Entregador obj) {
-        String sql = "UPDATE entregadores SET nome = ?, telefone = ? WHERE codigo = ?";
+        String sql = "UPDATE entregador SET nome = ?, telefone = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, obj.getNome());
             st.setString(2, obj.getTelefone());
@@ -63,7 +62,7 @@ public class EntregadorDaoJDBC implements EntregadorDao {
 
     @Override
     public List<Entregador> findAll() {
-        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM entregadores ORDER BY nome")) {
+        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM entregador ORDER BY nome")) {
             ResultSet rs = st.executeQuery();
             List<Entregador> list = new ArrayList<>();
             while (rs.next()) {

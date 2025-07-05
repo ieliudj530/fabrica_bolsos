@@ -2,7 +2,6 @@ package senac.senacfx.model.dao.impl;
 
 import senac.senacfx.db.DbException;
 import senac.senacfx.model.dao.ProdutoDao;
-import senac.senacfx.model.entities.Cliente;
 import senac.senacfx.model.entities.Produto;
 
 import java.sql.*;

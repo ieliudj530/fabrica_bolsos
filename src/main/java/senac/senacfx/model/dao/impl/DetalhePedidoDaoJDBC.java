@@ -2,7 +2,6 @@ package senac.senacfx.model.dao.impl;
 
 import senac.senacfx.db.DbException;
 import senac.senacfx.model.dao.DetalhePedidoDao;
-import senac.senacfx.model.entities.Cliente;
 import senac.senacfx.model.entities.DetalhePedido;
 
 import java.sql.*;
@@ -19,7 +18,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
 
     @Override
     public void insert(DetalhePedido obj) {
-        String sql = "INSERT INTO detalhe_pedido (codigo_pedido, codigo_produto, quantidade, preco_unitario) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO detalhepedido (codigo_pedido, codigo_produto, quantidade, preco_unitario) VALUES (?, ?, ?, ?)";
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setLong(1, obj.getCodigoPedido());
             st.setLong(2, obj.getCodigoProduto());
@@ -42,7 +41,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
 
     @Override
     public void update(DetalhePedido obj) {
-        String sql = "UPDATE detalhe_pedido SET codigo_pedido = ?, codigo_produto = ?, quantidade = ?, preco_unitario = ? WHERE codigo = ?";
+        String sql = "UPDATE detalhepedido SET codigo_pedido = ?, codigo_produto = ?, quantidade = ?, preco_unitario = ? WHERE codigo = ?";
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setLong(1, obj.getCodigoPedido());
             st.setLong(2, obj.getCodigoProduto());
@@ -68,7 +67,7 @@ public class DetalhePedidoDaoJDBC implements DetalhePedidoDao {
 
     @Override
     public List<DetalhePedido> findAll() {
-        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM detalhe_pedido ORDER BY codigo")) {
+        try (PreparedStatement st = conn.prepareStatement("SELECT * FROM detalhepedido ORDER BY codigo")) {
             ResultSet rs = st.executeQuery();
             List<DetalhePedido> list = new ArrayList<>();
             while (rs.next()) {

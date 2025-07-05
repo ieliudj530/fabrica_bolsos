@@ -39,7 +39,7 @@
                 <TableColumn fx:id="tableColumnPedido" prefWidth="150.0" text="Pedido" />
                 <TableColumn fx:id="tableColumnProduto" prefWidth="150.0" text="Produto" />
                 <TableColumn fx:id="tableColumnQuantidade" prefWidth="80.0" text="Quantidade" />
-                <TableColumn fx:id="tableColumnPreco" prefWidth="100.0" text="Preço Unitário" />
+                <TableColumn fx:id="tableColumnPrecoUnitario" prefWidth="100.0" text="Preço Unitário" />
                 <TableColumn fx:id="tableColumnEDIT" prefWidth="50.0" />
                 <TableColumn fx:id="tableColumnREMOVE" prefWidth="50.0" />
             </columns>
