@@ -25,7 +25,7 @@ public class Main extends Application {
 
             mainScene = new Scene(scrollPane);
             primaryStage.setScene(mainScene);
-            primaryStage.setTitle("Fabrica de Bolsos");
+            primaryStage.setTitle("Sistema de Gerenciamento");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();

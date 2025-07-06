@@ -40,9 +40,9 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <ImageView fitHeight="200.0" fitWidth="200.0">
+            <ImageView fitHeight="231.0" fitWidth="231.0">
                <image>
-                  <Image url="@../esdeath.jpg" />
+                  <Image url="@../Sistema.jpg" />
                </image>
                <VBox.margin>
                   <Insets left="160.0" top="30.0" />
