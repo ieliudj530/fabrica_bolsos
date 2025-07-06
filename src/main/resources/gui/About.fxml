@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="519.0" prefWidth="693.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.AboutController">
+<VBox prefHeight="519.0" prefWidth="693.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.AboutController">
          <children>
             <Label prefHeight="36.0" prefWidth="68.0" styleClass="label-sobre" text="Sobre">
                <font>
@@ -20,15 +18,15 @@
                   <Insets bottom="10.0" left="20.0" top="10.0" />
                </padding>
             </Label>
-      <Text fill="#001eff" strokeType="OUTSIDE" strokeWidth="0.0" text="Template desenvolvido como modelo para os alunos do SENAC." textAlignment="CENTER" wrappingWidth="618.68701171875">
+      <Text fill="#080f39" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de Gerenciamento de Pedidos&#10;para Pequenas Empresas" textAlignment="CENTER" wrappingWidth="618.68701171875">
          <VBox.margin>
             <Insets left="20.0" right="20.0" top="50.0" />
          </VBox.margin>
          <font>
-            <Font size="24.0" />
+            <Font name="JetBrains Mono ExtraBold" size="24.0" />
          </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui pode ser colocado informações sobre o desenvolvimento dessa aplicação e os créditos aos desenvolvedores." textAlignment="CENTER" wrappingWidth="618.68701171875">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIÇÃO DO PROJETO&#10;&#10;        Este sistema de banco de dados foi desenvolvido para gerenciar de forma eficiente os pedidos realizados por clientes em uma empresa que comercializa produtos físicos e realiza entregas por entregadores.&#10;        A estrutura contempla o cadastro de clientes, produtos, entregadores, pedidos e detalhes, permitindo controle das transações, do estoque e da logística.&#10;        &#10;Funcionalidades principais:&#10;&#10;        • Registrar pedidos com múltiplos produtos&#10;        • Associar cada pedido a um cliente e entregador&#10;        • Controlar o estoque dos produtos&#10;        • Calcular o valor total dos pedidos&#10;        &#10;APLICAÇÃO POSSÍVEL&#10;&#10;        Este banco pode ser usado em:&#10;        - Lojas locais (mercearias, farmácias).&#10;        - Pequenas empresas com entregas.&#10;        - Negócios via WhatsAppPode ser integrado com JavaFX, PHP&#10;&#9;ou Node.js.&#10;&#10;CREDITOS&#10;&#10;Desenvolvido por Adan Morales e Eliud Gonzalez.&#10;Programa Joven Programador SENAC 2025." textAlignment="JUSTIFY" wrappingWidth="618.68701171875">
          <VBox.margin>
             <Insets bottom="10.0" left="20.0" right="20.0" top="100.0" />
          </VBox.margin>
