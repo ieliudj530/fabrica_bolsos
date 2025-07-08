@@ -2,6 +2,8 @@ package senac.senacfx.model.entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 public class Pedido implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -18,7 +20,13 @@ public class Pedido implements Serializable {
         this.codigoCliente = codigoCliente;
         this.dataPedido = dataPedido;
     }
-
+    public String getDataPedidoString() {
+        if (dataPedido != null) {
+            DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            return dataPedido.format(formatter);
+        }
+        return "";
+    }
     public Long getCodigo() { return codigo; }
     public void setCodigo(Long codigo) { this.codigo = codigo; }
 
