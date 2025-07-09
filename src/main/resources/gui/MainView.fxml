@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.MainViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="700.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.MainViewController">
     <content>
-        <VBox prefHeight="405.0" prefWidth="566.0">
+        <VBox prefHeight="405.0" prefWidth="695.0">
             <children>
                 <MenuBar>
                     <menus>
@@ -45,7 +45,7 @@
                   <Image url="@../Sistema.jpg" />
                </image>
                <VBox.margin>
-                  <Insets left="160.0" top="30.0" />
+                  <Insets left="220.0" top="30.0" />
                </VBox.margin>
             </ImageView>
 
